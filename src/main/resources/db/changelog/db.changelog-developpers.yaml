@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: nblinh
+      comment : "Creates table DEVELOPPERS"
+      changes:
+        - createTable:
+            tableName: developper
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nom
+                  type: varchar
+              - column:
+                  name: prenom
+                  type: varchar
+  - changeSet:
+      id: 4
+      author: nblinh
+      comment : "Insert developper"
+      changes:
+        - insert:
+            tableName: developper
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: nom
+                  value: "NGUYEN"
+              - column:
+                  name: prenom
+                  value: "Ba Linh"

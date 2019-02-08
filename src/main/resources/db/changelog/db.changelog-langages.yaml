@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: nblinh
+      comment : "Creates table LANGAGES"
+      changes:
+        - createTable:
+            tableName: langage
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nom
+                  type: varchar
+  - changeSet:
+      id: 6
+      author: nblinh
+      comment : "Insert langage"
+      changes:
+        - insert:
+            tableName: langage
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: nom
+                  value: "Java"

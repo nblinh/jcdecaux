@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: ecoquelin
+      comment : "Creates table INFOS"
+      changes:
+        - createTable:
+            tableName: infos
+            columns:
+              - column:
+                  name: version
+                  type: varchar
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: ecoquelin
+      comment : "Insert starting version"
+      changes:
+        - insert:
+            tableName: infos
+            columns:
+              - column:
+                  name: version
+                  value: "1"
+  - include:
+        file: db/changelog/db.changelog-developpers.yaml
+  - include:
+        file: db/changelog/db.changelog-langages.yaml
+  - include:
+        file: db/changelog/db.changelog-developpers-langages.yaml

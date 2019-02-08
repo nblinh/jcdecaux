@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: nblinh
+      comment : "Creates table DEVELOPPERS-LANGAGES"
+      changes:
+        - createTable:
+            tableName: developper_langage
+            columns:
+              - column:
+                  name: developper_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: langage_id
+                  type: int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: addConstraint
+      author: nblinh
+      changes:
+        - addPrimaryKey:
+            columnNames: developper_id, langage_id
+            constraintName: pk_developper_langage
+            tableName: developper_langage
+        - addForeignKeyConstraint:
+            baseColumnNames: developper_id
+            baseTableName: developper_langage
+            constraintName: fk_developper
+            referencedColumnNames: id
+            referencedTableName: developper
+        - addForeignKeyConstraint:
+            baseColumnNames: langage_id
+            baseTableName: developper_langage
+            constraintName: fk_langage
+            referencedColumnNames: id
+            referencedTableName: langage
