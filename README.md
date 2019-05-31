@@ -1,4 +1,4 @@
-Réaliser une API RESTful permettant de :
+Réaliser une API RESTful permettant de:
 - créer des développeurs,
 - modifier les informations d'un développeur,
 - créer des langages de programmation,
